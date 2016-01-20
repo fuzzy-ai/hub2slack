@@ -1,0 +1,22 @@
+{
+  "name": "hub2slack",
+  "description": "Tiny server that sends Docker hub notifications to Slack",
+  "repository": "https://gitlab.com/fuzzy-io/hub2slack.git",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "cake build",
+    "clean": "cake clean",
+    "start": "coffee src/main.coffee"
+  },
+  "dependencies": {
+    "async": "0.9.x",
+    "lodash": "2.4.x",
+    "coffee-script": "^1.10.0",
+    "fuzzy.io-microservice": "^0.3.2",
+    "fuzzy.io-web": "^0.2.0"
+  },
+  "devDependencies": {
+    "glob": "^6.0.4",
+    "vows": "0.8.x"
+  }
+}
