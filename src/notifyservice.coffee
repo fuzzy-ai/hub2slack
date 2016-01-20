@@ -25,7 +25,7 @@ class NotifyService extends Microservice
 
   setupRoutes: (exp) ->
 
-    exp.get '/version', (req, res, next) ->
+    exp.get '/version', (req, res, next) =>
       res.json {name: @getName(), version: version}
 
     exp.post '/ping', (req, res, next) ->
