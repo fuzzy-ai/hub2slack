@@ -31,17 +31,24 @@ class NotifyService extends Microservice
     exp.post '/ping', (req, res, next) ->
       hook = req.app.config.hook
       event = req.body
-      name = event?.repository?.repo_name
-      pusher = event?.push_data?.pusher
-      dt = (new Date(event?.push_data?.pushed_at)).toString()
-      props =
-        text: "#{pusher} pushed a new image to #{name} at #{dt}"
-        username: "hub2slack"
-        icon_emoji: ":whale:"
-      headers =
-        "Content-Type": "application/json"
-      post hook, headers, JSON.stringify(props), (err) ->
-        if err
-          console.error err
+      log = req.app.log
+      setImmediate ->
+        name = event?.repository?.repo_name
+        url = event?.repository?.repo_url
+        pusher = event?.push_data?.pusher
+        dt = (new Date(event?.push_data?.pushed_at)).toString()
+        props =
+          text: "<https://hub.docker.com/u/#{pusher}/|#{pusher}> pushed a new image of <#{url}|#{name}> at #{dt}"
+          username: "hub2slack"
+          icon_emoji: ":whale:"
+        headers =
+          "Content-Type": "application/json"
+        post hook, headers, JSON.stringify(props), (err) ->
+          if err
+            # Queue again
+            log.error {err: err, name: name, pusher: pusher, dt: dt, status: "Unsuccessful notification"}
+          else
+            log.info {name: name, pusher: pusher, dt: dt, status: "Successful notification"}
+      res.status(204).end()
 
 module.exports = NotifyService
