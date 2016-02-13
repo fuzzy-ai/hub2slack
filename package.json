@@ -12,11 +12,12 @@
     "async": "0.9.x",
     "lodash": "2.4.x",
     "coffee-script": "^1.10.0",
-    "fuzzy.io-microservice": "^0.3.2",
+    "fuzzy.io-microservice": "^0.3.4",
     "fuzzy.io-web": "^0.2.0"
   },
   "devDependencies": {
     "glob": "^6.0.4",
-    "vows": "0.8.x"
+    "vows": "0.8.x",
+    "request": "^2.69.0"
   }
 }
