@@ -2,7 +2,7 @@
   "name": "hub2slack",
   "description": "Tiny server that sends Docker hub notifications to Slack",
   "repository": "https://gitlab.com/fuzzy-io/hub2slack.git",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "scripts": {
     "build": "cake build",
     "clean": "cake clean",
