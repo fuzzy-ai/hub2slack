@@ -1,11 +1,11 @@
 # notifyservice.coffee
-# Copyright 2016 9165584 Canada Corporation <legal@fuzzy.io>
+# Copyright 2016 9165584 Canada Corporation <legal@fuzzy.ai>
 # All rights reserved.
 
 async = require 'async'
 
-Microservice = require 'fuzzy.io-microservice'
-{post, ClientError, ServerError} = require 'fuzzy.io-web'
+Microservice = require 'fuzzy.ai-microservice'
+{post, ClientError, ServerError} = require 'fuzzy.ai-web'
 
 version = require './version'
 

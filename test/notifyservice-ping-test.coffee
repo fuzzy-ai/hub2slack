@@ -1,5 +1,5 @@
 # notifyservice-ping-test.coffee
-# Copyright 2016 9165584 Canada Corporation <legal@fuzzy.io>
+# Copyright 2016 9165584 Canada Corporation <legal@fuzzy.ai>
 # All rights reserved.
 
 util = require 'util'
@@ -10,7 +10,7 @@ vows = require 'vows'
 assert = require 'assert'
 request = require 'request'
 
-{post, ClientError, ServerError} = require 'fuzzy.io-web'
+{post, ClientError, ServerError} = require 'fuzzy.ai-web'
 
 process.on 'uncaughtException', (err) ->
   console.error err
@@ -70,25 +70,25 @@ vows
                 url = 'http://localhost:2342/ping'
                 props =
                   push_data:
-                  	pushed_at: 1453309389
-                  	images: []
-                  	pusher: "fuzzyio"
+                    pushed_at: 1453309389
+                    images: []
+                    pusher: "fuzzyio"
                   callback_url: "https://registry.hub.docker.com/u/fuzzyio/fakename/hook/22jjfbd1jej3c4giade134h122dhah33j/"
                   repository:
-                  	status: "Active"
-                  	description: "fakename.fuzzy.io"
-                  	is_trusted: true
-                  	full_description: null
-                  	repo_url: "https://registry.hub.docker.com/u/fuzzyio/fakename/"
-                  	owner: "fuzzyio"
-                  	is_official: false
-                  	is_private: true
-                  	name: "fakename"
-                  	namespace: "fuzzyio"
-                  	star_count: 0
-                  	comment_count: 0
-                  	date_created: 1453153941
-                  	repo_name: "fuzzyio/fakename"
+                    status: "Active"
+                    description: "fakename.fuzzy.ai"
+                    is_trusted: true
+                    full_description: null
+                    repo_url: "https://registry.hub.docker.com/u/fuzzyio/fakename/"
+                    owner: "fuzzyio"
+                    is_official: false
+                    is_private: true
+                    name: "fakename"
+                    namespace: "fuzzyio"
+                    star_count: 0
+                    comment_count: 0
+                    date_created: 1453153941
+                    repo_name: "fuzzyio/fakename"
                 headers =
                   "Content-Type": "application/json"
                 post url, headers, JSON.stringify(props), (err, response) ->
