@@ -10,7 +10,7 @@ vows = require 'vows'
 assert = require 'assert'
 request = require 'request'
 
-{post, ClientError, ServerError} = require 'fuzzy.ai-web'
+{post, ClientError, ServerError} = require '@fuzzy-ai/web'
 
 process.on 'uncaughtException', (err) ->
   console.error err

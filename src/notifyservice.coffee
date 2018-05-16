@@ -5,7 +5,7 @@
 async = require 'async'
 
 Microservice = require 'fuzzy.ai-microservice'
-{post, ClientError, ServerError} = require 'fuzzy.ai-web'
+{post, ClientError, ServerError} = require '@fuzzy-ai/web'
 
 version = require './version'
 
